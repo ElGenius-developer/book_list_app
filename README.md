@@ -63,23 +63,27 @@ Follows **Clean Architecture** principles:
 ### Installation
 
 1. **Clone the repository**:
+
    ```
    git clone https://github.com/ElGenius-developer/book_list_app
+
    cd book_list_app 
    ```
 
-    2. **Install dependencies**:
-       ```
+2. **Install dependencies**:
+
+       
        flutter pub get
 
-    3. Generate code and serialize models (if needed):
-       ```
+3. Generate code and serialize models (if needed):
+
+       
        flutter pub run build_runner build -d
-       ```
-    4. **Run the app**:
-       ```
+       
+4. **Run the app**:
+       
        flutter run
-       ```
+       
 
 ---
 
