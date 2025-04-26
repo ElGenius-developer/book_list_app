@@ -71,27 +71,18 @@ Follows **Clean Architecture** principles:
 
 2. **Install dependencies**:
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 860dc78d40b85053d2e5b9cf11d3b2adc1a062da
        flutter pub get
 
 3. **Generate code and serialize models (if needed)**:
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 860dc78d40b85053d2e5b9cf11d3b2adc1a062da
        flutter pub run build_runner build -d
 
 4. **Run the app**:
 
        flutter run
-<<<<<<< HEAD
-=======
 
->>>>>>> 860dc78d40b85053d2e5b9cf11d3b2adc1a062da
 
 ---
 
@@ -130,8 +121,4 @@ Follows **Clean Architecture** principles:
 ![Screenshot 11](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/details_2_tablet.png?raw=true)
 
 
-<<<<<<< HEAD
 ---
-=======
----
->>>>>>> 860dc78d40b85053d2e5b9cf11d3b2adc1a062da
