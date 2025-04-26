@@ -92,12 +92,20 @@ Follows **Clean Architecture** principles:
 
 ## 📸 Screenshots
 
-![Screenshot 1](https://github.com/ElGenius-developer/book_list_app/screenshots/books_list.png?raw=true)
+![Screenshot 1](https://github.com/ElGenius-developer/book_list_app/screen_shots/books_list.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/loading.png?raw=true)
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/book_details.png?raw=true)
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/no_results.png?raw=true)
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/result_with_full_summary.png?raw=true)
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/result_with_loadmore.png?raw=true)
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/search_result_on_mobile.png?raw=true)
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screenshots/search_result_on_tablet.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/loading.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/book_details.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/no_results.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/result_with_full_summary.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/result_with_loadmore.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_mobile.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_tablet.png?raw=true)
+
+---
