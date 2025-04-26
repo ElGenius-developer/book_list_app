@@ -96,16 +96,16 @@ Follows **Clean Architecture** principles:
 
 ![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/loading.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/book_details.png?raw=true)
+![Screenshot 3](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/book_details.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/no_results.png?raw=true)
+![Screenshot 4](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/no_results.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/result_with_full_summary.png?raw=true)
+![Screenshot 5](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/result_with_full_summary.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/result_with_loadmore.png?raw=true)
+![Screenshot 6](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/result_with_loadmore.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_mobile.png?raw=true)
+![Screenshot 7](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_mobile.png?raw=true)
 
-![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_tablet.png?raw=true)
+![Screenshot 8](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_tablet.png?raw=true)
 
 ---
