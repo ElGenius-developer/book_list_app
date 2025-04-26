@@ -16,7 +16,6 @@ Built with **Clean Architecture**, **Cubit (flutter_bloc)** for state management
     - Responsive layout (Mobile, Tablet)
     - Error handling and retry on failure
     - Offline support (cache books and search results)
-    - Blur background support (optional for extra polish)
 
 ---
 
@@ -58,7 +57,7 @@ Follows **Clean Architecture** principles:
 ### Prerequisites
 
 - Flutter SDK ( >= 3.27.0)
-    - Android Studio/Xcode (for emulator setup)
+- Android Studio/Xcode (for emulator setup)
 
 ### Installation
 
