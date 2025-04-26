@@ -71,18 +71,18 @@ Follows **Clean Architecture** principles:
 
 2. **Install dependencies**:
 
-       
+
        flutter pub get
 
-3. Generate code and serialize models (if needed):
+3. **Generate code and serialize models (if needed)**:
 
-       
+
        flutter pub run build_runner build -d
-       
+
 4. **Run the app**:
-       
+
        flutter run
-       
+
 
 ---
 
@@ -113,5 +113,12 @@ Follows **Clean Architecture** principles:
 ![Screenshot 7](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_mobile.png?raw=true)
 
 ![Screenshot 8](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/search_result_on_tablet.png?raw=true)
+
+![Screenshot 9](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/details.png?raw=true)
+
+![Screenshot 10](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/details_1_tablet.png?raw=true)
+
+![Screenshot 11](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/details_2_tablet.png?raw=true)
+
 
 ---
