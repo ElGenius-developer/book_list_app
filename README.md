@@ -63,20 +63,23 @@ Follows **Clean Architecture** principles:
 ### Installation
 
 1. **Clone the repository**:
-   ```bash
+   ```
    git clone https://github.com/ElGenius-developer/book_list_app
-   cd book_list_app
-   2. **Install dependencies**:
-      ```bash
-      flutter pub get
+   cd book_list_app 
+   ```
 
-   3. Generate code and serialize models (if needed):
-      ```bash
-      flutter pub run build_runner build -d
+    2. **Install dependencies**:
+       ```
+       flutter pub get
 
-   4. **Run the app**:
-      ```bash
-      flutter run
+    3. Generate code and serialize models (if needed):
+       ```
+       flutter pub run build_runner build -d
+       ```
+    4. **Run the app**:
+       ```
+       flutter run
+       ```
 
 ---
 
@@ -92,7 +95,7 @@ Follows **Clean Architecture** principles:
 
 ## 📸 Screenshots
 
-![Screenshot 1](https://github.com/ElGenius-developer/book_list_app/screen_shots/books_list.png?raw=true)
+![ Screenshot 1](https://github.com/ElGenius-developer/book_list_app/screen_shots/books_list.png?raw=true)
 
 ![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/blob/main/screen_shots/loading.png?raw=true)
 
