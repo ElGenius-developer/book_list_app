@@ -1,2 +1,109 @@
-# book_list_app
- a simple mobile application to browse and search books from the Project Gutenberg library using the free and keyless Gutendex API.
+# 📚 Book Listing App
+
+A Flutter mobile application to browse and search books from the Project Gutenberg Library using the Gutendex API.  
+Built with **Clean Architecture**, **Cubit (flutter_bloc)** for state management, and **offline caching** with Hive.
+
+## 🚀 Features
+
+- View list of books from Gutendex
+    - Infinite scrolling (pagination)
+    - Search books with live results
+    - Book item with:
+        - Cover image
+        - Title
+        - Authors
+        - 3-line collapsible summary with "See More" / "See Less"
+    - Responsive layout (Mobile, Tablet)
+    - Error handling and retry on failure
+    - Offline support (cache books and search results)
+    - Blur background support (optional for extra polish)
+
+---
+
+## 🏛 Architecture
+
+Follows **Clean Architecture** principles:
+
+| Layer            | Responsibility                                             |
+|------------------|------------------------------------------------------------|
+| **Presentation** | UI widgets,Screens, Cubits (state management)              |
+| **Domain**       | Repositories Entities, Use cases                           |
+| **Data**         | Repositories,Models, Data sources (API + Hive)             |
+| **Core**         | Networking, Utilities, Routing, Themes, Colors, and Styles |
+
+**State Management**: Cubit (`flutter_bloc`)  
+**Dependency Injection**: `GetIt`
+
+---
+
+## Tech Stack
+
+| Package                | Purpose                                         |
+|------------------------|-------------------------------------------------|
+| `flutter`              | Core framework                                  |
+| `flutter_bloc`         | State management (Cubit)                        |
+| `get_it`               | Dependency Injection                            |
+| `http`                 | API requests to Gutendex Api                    |
+| `hive`                 | Local caching for offline support               |
+| `cached_network_image` | Load and cache book image                       |
+| `freezed`              | Immutable models and Code generation for models |
+| `json_serializable`    | Model code generation                           |
+| `connectivity_plus`    | Network status detection                        |
+| `responsive_builder`   | Adaptive UI for multiple screen sizes           |
+
+---
+
+## 🛠 Getting Started
+
+### Prerequisites
+
+- Flutter SDK ( >= 3.27.0)
+    - Android Studio/Xcode (for emulator setup)
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ElGenius-developer/book_list_app
+   cd book_list_app
+   2. **Install dependencies**:
+      ```bash
+      flutter pub get
+
+   3. Generate code and serialize models (if needed):
+      ```bash
+      flutter pub run build_runner build -d
+
+   4. **Run the app**:
+      ```bash
+      flutter run
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## 🙌 Links
+
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev/)
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ElGenius-developer)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-developer)
+
+---
+
+## 📸 Screenshots
+
+![Screenshot 1](https://github.com/ElGenius-developer/book_list_app/screenshots/books_list.png?raw=true)
+
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/loading.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/book_details.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/no_results.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/result_with_full_summary.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/result_with_loadmore.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/search_result_on_mobile.png?raw=true)
+![Screenshot 2](https://github.com/ElGenius-developer/book_list_app/screenshots/search_result_on_tablet.png?raw=true)
