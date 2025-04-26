@@ -1,4 +1,3 @@
-import 'package:auto_animated/auto_animated.dart';
 import 'package:book_list_app/core/constants/colors.dart';
 import 'package:book_list_app/core/constants/text_style.dart';
 import 'package:book_list_app/features/books_list/domain/entities/book.dart';
@@ -80,28 +79,17 @@ class _BookListScreenState extends State<BookListScreen> {
     if (books.isEmpty) {
       return _buildError(context, "No Books Found", books, false);
     }
-    return LiveList(
-      showItemDuration: Durations.short1,
+    return ListView.builder(
       itemCount: books.length + 1,
 
-      itemBuilder:
-          (context, index, animation) => _bookListBuilder(context, index, animation, books, canLoadMore),
+      itemBuilder: (context, index) => _bookListBuilder(context, index, books, canLoadMore),
     );
   }
 
-  Widget _bookListBuilder(
-    BuildContext context,
-    int index,
-    Animation<double> animation,
-    List<Book> books,
-    bool canLoadMore,
-  ) {
+  Widget _bookListBuilder(BuildContext context, int index, List<Book> books, bool canLoadMore) {
     //show books items
     if (index < books.length) {
-      return SlideTransition(
-        position: Tween<Offset>(begin: const Offset(1, -.2), end: Offset.zero).animate(animation),
-        child: BookItem(book: books[index]),
-      );
+      return BookItem(book: books[index]);
     }
     //show loading message
     else {

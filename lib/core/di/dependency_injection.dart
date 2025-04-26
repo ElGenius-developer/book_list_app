@@ -11,7 +11,6 @@ import 'package:book_list_app/features/books_list/domain/usecases/search_books_u
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
-import 'package:logger/logger.dart';
 
 import '../../features/books_list/presentation/cubits/books_cubit.dart';
 
@@ -26,8 +25,6 @@ void setUpLocator({required Directory appDirectory, required List<int> encryptio
   sl.registerSingleton(Cacher(encryptionKey));
   // * Directory
   sl.registerSingleton<Directory>(appDirectory);
-  // * Logger
-  sl.registerSingleton(Logger());
 
   // * Connectivity
   sl.registerSingleton<Connectivity>(Connectivity());

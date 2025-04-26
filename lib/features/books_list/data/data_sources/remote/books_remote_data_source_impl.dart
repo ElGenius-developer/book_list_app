@@ -16,12 +16,7 @@ class BooksRemoteDataSourceImpl extends IBooksRemoteDataSource {
     );
     final response = await client.get(uri).timeout(Duration(seconds: 10));
 
-    try {
-      return BooksResponseModel.fromJson(jsonDecode(response.body));
-    } catch (e) {
-      sl<Logger>().e(e);
-      rethrow;
-    }
+    return BooksResponseModel.fromJson(jsonDecode(response.body));
   }
 
   //https://url.com/books/?page=1&search=Or

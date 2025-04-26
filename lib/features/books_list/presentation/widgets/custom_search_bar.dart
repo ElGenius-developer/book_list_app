@@ -31,11 +31,15 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           backgroundColor: WidgetStatePropertyAll(ColorsManager.white),
           surfaceTintColor: WidgetStatePropertyAll(ColorsManager.white),
           shadowColor: WidgetStatePropertyAll(ColorsManager.mainExtraLight),
-          onSubmitted: (value) => context.read<BooksCubit>().searchBooks(value),
+          onSubmitted: (value) => _search(value),
           hintText: 'Search by title or author',
           hintStyle: WidgetStatePropertyAll(AppTextStyles.font16greyBold),
           leading: const Icon(Icons.search, color: ColorsManager.grey),
           trailing: [
+            IconButton(
+              icon: const Icon(Icons.search, color: ColorsManager.grey),
+              onPressed: () => _search(widget.controller.text),
+            ),
             IconButton(icon: const Icon(Icons.close, color: ColorsManager.grey), onPressed: _clearSearch),
           ],
         ),
@@ -47,5 +51,10 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     widget.controller.clear();
     sl<BooksCubit>().clearSearch();
     setState(() {});
+  }
+
+  void _search(String value) {
+    FocusManager.instance.primaryFocus?.unfocus();
+    context.read<BooksCubit>().searchBooks(value);
   }
 }

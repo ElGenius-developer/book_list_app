@@ -1,5 +1,7 @@
 import 'package:book_list_app/core/constants/colors.dart';
 import 'package:book_list_app/core/constants/text_style.dart';
+import 'package:book_list_app/core/routing/app_router.dart';
+import 'package:book_list_app/core/routing/routing_context_extension.dart';
 import 'package:book_list_app/core/utils/extensions_methods/string_extension.dart';
 import 'package:book_list_app/features/books_list/domain/entities/book.dart';
 import 'package:book_list_app/features/books_list/domain/entities/person.dart';
@@ -42,69 +44,79 @@ class _BookItemState extends State<BookItem> {
         final imageWidth = deviceInfo.screenSize.width * .9;
         return Padding(
           padding: const EdgeInsets.all(10.0),
-          child: ShadowWidget(
-            shadowColor: ColorsManager.mainExtraLight,
-            child: Column(
-              children: [
-                if (widget.book.formats?.imageJpeg != null)
+          child: GestureDetector(
+            onTap: _navigateToBookDetails,
+            child: ShadowWidget(
+              shadowColor: ColorsManager.mainExtraLight,
+              child: Column(
+                children: [
+                  if (widget.book.formats?.imageJpeg != null)
+                    Visibility(
+                      visible: widget.isProtoType == false,
+                      replacement: Container(
+                        height: imageHeight,
+                        width: imageWidth,
+                        color: ColorsManager.grey.withValues(alpha: .3),
+                        child: Icon(Icons.image),
+                      ),
+                      child: Hero(
+                        tag: widget.book.id.toString(),
+                        child: CachedNetworkImage(
+                          scale: 1.15,
+                          filterQuality: FilterQuality.high,
+                          height: imageHeight,
+                          // width: imageWidth,
+                          imageUrl: widget.book.formats!.imageJpeg!,
+                          fit: BoxFit.cover,
+
+                          placeholder: (context, url) => Center(child: CircularProgressIndicator.adaptive()),
+                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                        ),
+                      ),
+                    ),
+
                   Visibility(
-                    visible: widget.isProtoType == false,
-                    replacement: Container(
-                      height: imageHeight,
-                      width: imageWidth,
-                      color: ColorsManager.grey.withValues(alpha: .3),
-                      child: Icon(Icons.image),
-                    ),
-                    child: CachedNetworkImage(
-                      filterQuality: FilterQuality.high,
-                      height: imageHeight,
-                      width: imageWidth,
-                      imageUrl: widget.book.formats!.imageJpeg!,
-                      fit: BoxFit.fill,
-
-                      placeholder: (context, url) => Center(child: CircularProgressIndicator.adaptive()),
-                      errorWidget: (context, url, error) => const Icon(Icons.error),
+                    visible: widget.book.title.isNotNullOrEmpty,
+                    child: ListTile(
+                      title: SelectableText(
+                        widget.book.title.emptyIfNull,
+                        style: AppTextStyles.font18BlueBold,
+                      ),
+                      subtitle: _buildAuthors(widget.book.authors),
                     ),
                   ),
+                  SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
 
-                Visibility(
-                  visible: widget.book.title.isNotNullOrEmpty,
-                  child: ListTile(
-                    title: SelectableText(widget.book.title.emptyIfNull, style: AppTextStyles.font18BlueBold),
-                    subtitle: _buildAuthors(widget.book.authors),
-                  ),
-                ),
-                SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-
-                    children: [
-                      // Summary Text
-                      Align(
-                        alignment: AlignmentDirectional.centerStart,
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.only(start: 15.0, end: 10, bottom: 10),
-                          child: Text(
-                            summary.isNotEmpty ? summary : 'No summary available',
-                            maxLines: _isExpanded ? null : 3,
-                            overflow: _isExpanded ? null : TextOverflow.ellipsis,
-                            style: AppTextStyles.font14BlackNormal.copyWith(
-                              color: summary.isNotEmpty ? ColorsManager.black : ColorsManager.grey,
+                      children: [
+                        // Summary Text
+                        Align(
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.only(start: 15.0, end: 10, bottom: 10),
+                            child: Text(
+                              summary.isNotEmpty ? summary : 'No summary available',
+                              maxLines: _isExpanded ? null : 3,
+                              overflow: _isExpanded ? null : TextOverflow.ellipsis,
+                              style: AppTextStyles.font14BlackNormal.copyWith(
+                                color: summary.isNotEmpty ? ColorsManager.black : ColorsManager.grey,
+                              ),
                             ),
                           ),
                         ),
-                      ),
 
-                      // "See More/Less" Button
-                      if (_showSeeMoreButton(summary))
-                        TextButton(
-                          onPressed: () => setState(() => _isExpanded = !_isExpanded),
-                          child: Text(_isExpanded ? 'See Less' : 'See More'),
-                        ),
-                    ],
+                        // "See More/Less" Button
+                        if (_showSeeMoreButton(summary))
+                          TextButton(
+                            onPressed: () => setState(() => _isExpanded = !_isExpanded),
+                            child: Text(_isExpanded ? 'See Less' : 'See More'),
+                          ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );
@@ -128,5 +140,13 @@ class _BookItemState extends State<BookItem> {
 
     textPainter.layout(maxWidth: MediaQuery.sizeOf(context).width - 40);
     return textPainter.didExceedMaxLines;
+  }
+
+  void _navigateToBookDetails() {
+    context.pushNamed(
+      RoutesNames.bookDetails,
+      arguments: widget.book,
+      pathParameters: {'bookId': widget.book.id.toString()},
+    );
   }
 }

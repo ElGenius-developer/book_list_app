@@ -112,8 +112,9 @@ class BooksCubit extends Cubit<BooksState> {
           books = data.results;
           if (books.isEmpty) {
             emit(BooksState.booksLoadFail(books: [], canLoadMore: true, message: "No books found"));
-          } else
+          } else {
             emit(BooksState.booksListLoaded(books: data.results, canLoadMore: data.canLoadMore));
+          }
         },
 
         failure:

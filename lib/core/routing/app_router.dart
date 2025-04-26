@@ -1,17 +1,16 @@
 library;
 
-import 'dart:convert';
 import 'dart:core';
 
 import 'package:book_list_app/features/books_list/domain/entities/book.dart';
 import 'package:book_list_app/features/books_list/presentation/pages/book_list_screen.dart';
-import 'package:book_list_app/features/books_list/presentation/widgets/book_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/books_list/presentation/pages/book_item_details_screen.dart';
+
 part 'route_names.dart';
-part 'router_extensions.dart';
 part 'router_page_creation.dart';
 
 // **** ------------------------------------------------------------------------------------------- ***
@@ -49,20 +48,13 @@ final class AppRouter {
 
       /// ---------------------------Book item screen -------------------------------------------
       GoRoute(
-        name: RoutesNames.bookItem,
-        path: "${RoutesNames.bookItem}/:visitId",
+        name: RoutesNames.bookDetails,
+        path: "${RoutesNames.bookDetails}/:bookId",
         pageBuilder: (_, state) {
           final book = state.extra as Book;
-          return createRouterPage(BookItem(book: book));
+          return createRouterPage(BookItemDetailsScreen(book: book));
         },
       ),
-
-      //-------------------------------------------------Drug Search -----------------------
-      // GoRoute(
-      //   name: RoutesNames.bookSearch,
-      //   path: RoutesNames.bookSearch,
-      //   pageBuilder: (_, $_) => createRouterPage(const SearchBook()),
-      // ),
     ],
   );
 }

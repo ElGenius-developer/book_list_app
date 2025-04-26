@@ -1,5 +1,5 @@
 import 'package:book_list_app/features/books_list/domain/entities/format.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'format_model.g.dart';

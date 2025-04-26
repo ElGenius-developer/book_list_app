@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Cacher {
   final List<int> encryptionKey;
@@ -9,13 +9,9 @@ class Cacher {
   Cacher(this.encryptionKey);
 
   Future<Box<T>> _openBoxIfClosed<T>(String boxName) async {
-
     final cipher = HiveAesCipher(encryptionKey);
 
-    return await Hive.openBox(
-      boxName,
-      encryptionCipher: cipher,
-    );
+    return await Hive.openBox(boxName, encryptionCipher: cipher);
     // }
   }
 
